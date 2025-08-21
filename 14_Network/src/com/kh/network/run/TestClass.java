@@ -14,6 +14,9 @@ public class TestClass {
 	
 	public void hi() {
 		System.out.println("테스트");
+		System.out.println("테");
+		System.out.println(" 스");
+		System.out.println("  트");
 	}
 
 }
