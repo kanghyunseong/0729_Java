@@ -36,6 +36,7 @@ public class IdolView {
 				info();
 				break;
 			case 2:
+				signUp();
 				break;
 			case 3:
 				break;
@@ -77,7 +78,14 @@ public class IdolView {
 	}
 	
 	private void findMember(int menuNo) {
-		ic.findMember(menuNo);
+		Idol idol = ic.findMember(menuNo);
+		System.out.println("💝" + idol.getName() + "💝");
+		System.out.println("🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵");
+		System.out.println(idol.getImage());
+		System.out.println("포지션 : " + idol.getPosition());
+		System.out.println("전투 기술 : " + idol.getSkill());
+		System.out.println("🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵");
+		System.out.println();
 	}
 
 	private void findAll() {
@@ -101,6 +109,53 @@ public class IdolView {
 
 		}
 
+	}
+	
+	public void signUp() {
+		System.out.println("\n에스파 커뮤니티에 오신것을 환영합니다.");
+		System.out.println("회원가입 서비스입니다.");
+		
+		String userId;
+		while(true) {
+			
+			// 제약조건 => 아이디는 4글자에서 10글자 사이일 것
+			//        => 아이디는 다른 Fan의 아이디와 중복되면 안될 것
+			System.out.print("가입하실 아이디를 입력해주세요 > ");
+			userId = sc.nextLine();
+			// 하나의 메소드는 하나의 기능만을 수행해야한다.
+			// 하지만 지금 이 회원가입 메소드는
+			// 회원 가입 뿐만 아니라 아이디값에 대한 유효성 검증을 진행하고있다.
+			// 이렇게 되면 이 메소드는 하는 일이
+			// 1. 유효성 검증
+			// 2. 회원가입
+			// 두개가 되어버리기 떄문에 하는 일이 너무 많은 것이다.
+			// 1. 아이디는 4글자에서 10글자 사이만 가능
+			if(!(3 < userId.length() && userId.length() < 11)) {
+				System.out.println("아이디는 4글자에서 10자 사이만 사용 가능합니다.");
+				continue;
+			}
+			
+			// 2. 중복체크
+			boolean duplicatedId= ic.checkId(userId);
+			
+			if(duplicatedId) {
+				System.out.println("이미 존재하는 아이디 입니다");
+			} else {
+				System.out.println("사용 가능한 아이디입니다.");
+				break;
+			}
+		}
+		
+		System.out.print("비밀번호를 입력해주세요 > ");
+		String userPwd = sc.nextLine();
+		
+		System.out.print("닉네임을 입력해주세요 > ");
+		String nickName = sc.nextLine();
+		
+		// 뷰는 일단 자신의 할일을 1절까지 마무리함
+		// 사용자가 입력한 아이디와 비밀번호와 닏네임을 가지고 Fan객체를 생성해서
+		// Controller에 있는 fans라는 List의 요소로 추가
+		ic.signUp(userId, userPwd, nickName);
 	}
 
 }
