@@ -210,9 +210,10 @@ public class IdolView {
 				selectBoardList();
 				break;
 			case 3:
+				findByBoardNo();
 				break;
 			case 4:
-				break;
+				return;
 			}
 		}
 	}
@@ -253,12 +254,46 @@ public class IdolView {
 			System.out.println("첫 게시글의 주인공이 되어보세요");
 		} else {
 			for (Board board : boardList) {
-				System.out.println("글 번호 : " + board.getBoardNo() + "\t");
-				System.out.println("글 제목 : " + board.getBoardTitle() + "\t");
-				System.out.println("작성자 : " + board.getUserId() + "\t");
-				System.out.println("작성일 : " + board.getCreateDate() + "\t");
+				System.out.print("글 번호 : " + board.getBoardNo() + "\t");
+				System.out.print("글 제목 : " + board.getBoardTitle() + "\t");
+				System.out.print("작성자 : " + board.getUserId() + "\t");
+				System.out.print("작성일 : " + board.getCreateDate() + "\t");
 				System.out.println();
 			}
 		}
+	}
+	
+	private void findByBoardNo() {
+		System.out.println("\n게시글 상세 보기 서비스 입니다.");
+		
+		selectBoardList();
+		
+		System.out.print("상세 보기를 할 번호를 입력해주세요 > ");
+		int boardNo = sc.nextInt();
+		sc.nextLine();
+		
+		Board board = ic.findByBoardNo(boardNo);
+		
+		if(board != null) {
+			System.out.println("==============");
+			System.out.println(boardNo + "번 게시글 상세보기");
+			// 4개 중에 하나 랜덤한 사진
+			System.out.println("\n제목" + board.getBoardTitle());
+			System.out.println("\n내용" + board.getBoardContent());
+			System.out.println("\n 작성자 : " + board.getUserId() + "\t 작성일 : " + board.getCreateDate());
+			
+			
+			
+		} else {
+			System.out.println(boardNo + "번 게시글은 존재하지 않습니다.");
+		}
+	
+	
+	
+	
+	
+	
+	
+	
 	}
 }
