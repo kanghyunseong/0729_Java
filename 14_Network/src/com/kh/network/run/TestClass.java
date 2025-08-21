@@ -17,6 +17,13 @@ public class TestClass {
 		System.out.println("테");
 		System.out.println(" 스");
 		System.out.println("  트");
+		System.out.println("  트");
+		
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		
 	}
 
 }
