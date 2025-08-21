@@ -24,6 +24,24 @@ public class TestClass {
 		System.out.println("  트");
 		System.out.println("  트");
 		
+
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		
+
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		
+
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		System.out.println("  트");
+		
 	}
 
 }
