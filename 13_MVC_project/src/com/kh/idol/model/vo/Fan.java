@@ -2,35 +2,35 @@ package com.kh.idol.model.vo;
 
 public class Fan {
 
-	private String uesrId;
-	private String uesrPwd;
+	private String userId;
+	private String userPwd;
 	private String nickName;
 
 	public Fan() {
 		super();
 	}
 
-	public Fan(String uesrId, String uesrPwd, String nickName) {
+	public Fan(String userId, String userPwd, String nickName) {
 		super();
-		this.uesrId = uesrId;
-		this.uesrPwd = uesrPwd;
+		this.userId = userId;
+		this.userPwd = userPwd;
 		this.nickName = nickName;
 	}
 
 	public String getUesrId() {
-		return uesrId;
+		return userId;
 	}
 
-	public void setUesrId(String uesrId) {
-		this.uesrId = uesrId;
+	public void setUserId(String uesrId) {
+		this.userId = uesrId;
 	}
 
-	public String getUesrPwd() {
-		return uesrPwd;
+	public String getUserPwd() {
+		return userPwd;
 	}
 
-	public void setUesrPwd(String uesrPwd) {
-		this.uesrPwd = uesrPwd;
+	public void setUserPwd(String uesrPwd) {
+		this.userPwd = uesrPwd;
 	}
 
 	public String getNickName() {
@@ -43,7 +43,7 @@ public class Fan {
 
 	@Override
 	public String toString() {
-		return "Fan [uesrId=" + uesrId + ", uesrPwd=" + uesrPwd + ", nickName=" + nickName + "]";
+		return "Fan [userId=" + userId + ", userPwd=" + userPwd + ", nickName=" + nickName + "]";
 	}
 
 }
