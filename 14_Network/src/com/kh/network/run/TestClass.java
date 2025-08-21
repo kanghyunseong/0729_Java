@@ -9,6 +9,11 @@ public class TestClass {
 		// 홈
 		//ㅁㅇㄴㄴㅇㅁㄴㅇ
 		// 아 ~~ 오늘도 열심히 공부했다 아 힘들다 고생했다~
+		// 마지막으로 한 번 만 더 테스트 하기
+	}
+	
+	public void hi() {
+		System.out.println("테스트");
 	}
 
 }
