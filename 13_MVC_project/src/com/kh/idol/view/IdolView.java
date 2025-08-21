@@ -207,6 +207,7 @@ public class IdolView {
 				post();
 				break;
 			case 2:
+				selectBoardList();
 				break;
 			case 3:
 				break;
@@ -217,28 +218,47 @@ public class IdolView {
 	}
 
 	private void post() {
-		
+
 		System.out.println("\n게시글 작성 서비스");
-		
+
 		// 전제조건 : 로그인한 사용자만 게시글을 작성할 수 있음
-		if(loginFan != null) {
-			
+		if (loginFan != null) {
+
 			System.out.println("게시글 제목을 입력해주세요 > ");
 			String boardTitle = sc.nextLine();
-			
+
 			System.out.println("게시글 내용을 입력해주세요 > ");
 			String boardContent = sc.nextLine();
-			
+
 			ic.post(boardTitle, boardContent, loginFan.getUesrId());
-			
+
 			System.out.println("게시글 작성 성공 ~~!");
-			
-		}else {
+
+		} else {
 			System.out.println("로그인 후 이용가능한 서비스 입니다.");
 		}
-		
-		
-		
 	}
 
+	private void selectBoardList() {
+
+		System.out.println();
+		System.out.println("\n전체 게시글 목록입니다.");
+		System.out.println();
+
+		List<Board> boardList = ic.selectBoardList();
+
+		if (boardList.isEmpty()) {
+			System.out.println("게시글이 아직 존재하지 않습니다");
+			System.out.println();
+			System.out.println("첫 게시글의 주인공이 되어보세요");
+		} else {
+			for (Board board : boardList) {
+				System.out.println("글 번호 : " + board.getBoardNo() + "\t");
+				System.out.println("글 제목 : " + board.getBoardTitle() + "\t");
+				System.out.println("작성자 : " + board.getUserId() + "\t");
+				System.out.println("작성일 : " + board.getCreateDate() + "\t");
+				System.out.println();
+			}
+		}
+	}
 }
