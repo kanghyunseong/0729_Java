@@ -5,6 +5,7 @@ public class Idol {
 	private String name;
 	private String position;
 	private String skill;
+	private String image;
 
 	public Idol() {
 		super();
@@ -39,6 +40,14 @@ public class Idol {
 
 	public void setSkill(String skill) {
 		this.skill = skill;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	@Override
