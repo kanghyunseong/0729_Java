@@ -14,6 +14,7 @@ public class Run {
 		 * 이 내용은 다음 주 월/화에 걸쳐 이해를 할 예정 
 		 * 
 		 */
+		
 		PrintController pc = new PrintController();
 		pc.printMyName();
 		
